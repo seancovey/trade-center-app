@@ -7,8 +7,10 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "jshint": "^2.9.6",
+    "mysql2": "^1.6.4",
     "path": "^0.12.7",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.41.2",
+    "sequelize-cli": "^5.4.0"
   },
   "devDependencies": {},
   "scripts": {

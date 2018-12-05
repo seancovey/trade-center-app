@@ -30,6 +30,20 @@ exports.postAddProduct = (req, res, next) => {
     });
 };
 
+exports.getAddProductDetails = (req, res, next) => {
+  res.render('admin/edit-product-details', {
+    pageTitle: 'Add Product Details',
+    path: '../admin/add-product-details',
+    editing: false
+  });
+};
+
+
+exports.postAddProductDetails = (req, res, next) => {
+    
+  };
+  
+
 exports.getEditProduct = (req, res, next) => {
   const editMode = req.query.edit;
   if (!editMode) {

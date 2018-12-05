@@ -12,9 +12,6 @@ const optionGroup =sequelize.define ( 'optionGroup', {
     optionGroupName: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-    notOptional: {
-        type: Sequelize.BOOLEAN
     }
 });
 
@@ -68,7 +65,8 @@ const Product = sequelize.define('product', {
     },
     productLive: {
         type: Sequelize.TINYINT,
-        allowNull:false
+        allowNull:false,
+        defaultValue: 0
     },
     productStock: {
         type: Sequelize.INTEGER,
@@ -95,6 +93,20 @@ const Product = sequelize.define('product', {
       }
   });
 
+  const categoryOption = sequelize.define ( 'categoryOption', {
+    catOptsID: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true
+    },
+    isOptional: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: true
+    }
+    
+});
+
   const Condition = sequelize.define ('condition', {
     condID: {
         type: Sequelize.INTEGER,
@@ -120,4 +132,13 @@ const Product = sequelize.define('product', {
 
   });
   
-  module.exports = Product;
+  module.exports = {
+        optionGroup,
+        Option, 
+        productOption,
+        Product,
+        Category,
+        Condition,
+        Image,
+        categoryOption
+  }; 
